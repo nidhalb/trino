@@ -6,31 +6,52 @@ spring:
         locator:
           enabled: true
       routes:
-      - id: "product_delete"
-        uri: "http://localhost:8089"
-        predicates:
-        - "Path=/api/v1/products/{productId}"
-        - "Method=DELETE"
-        metadata:
-          microservice: "product"
-      - id: "product_add_category"
-        uri: "http://localhost:8089"
-        predicates:
-        - "Path=/api/v1/products/categories"
-        - "Method=POST"
-        metadata:
-          microservice: "product"
-      - id: "category_add"
-        uri: "http://localhost:8088"
-        predicates:
-        - "Path=/api/v1/categories"
-        - "Method=POST"
-        metadata:
-          microservice: "category"
-      - id: "category_get_all"
-        uri: "http://localhost:8088"
-        predicates:
-        - "Path=/api/v1/categories"
-        - "Method=GET"
-        metadata:
-          microservice: "category"
+        - id: "productadd"
+          uri: "http://localhost:8089"
+          predicates:
+            - "Path=/api/v1/products"
+            - "Method=POST"
+          metadata:
+            microservice: "product"
+        - id: "product_update"
+          uri: "http://localhost:8089"
+          predicates:
+            - "Path=/api/v1/products"
+            - "Method=PUT"
+          metadata:
+            microservice: "product"
+        - id: "product_get_all"
+          uri: "http://localhost:8089"
+          predicates:
+            - "Path=/api/v1/products"
+            - "Method=GET"
+          metadata:
+            microservice: "product"
+        - id: "product_delete"
+          uri: "http://localhost:8089"
+          predicates:
+            - "Path=/api/v1/products/{productId}"
+            - "Method=DELETE"
+          metadata:
+            microservice: "product"
+        - id: "product_add_category"
+          uri: "http://localhost:8089"
+          predicates:
+            - "Path=/api/v1/products/categories"
+            - "Method=POST"
+          metadata:
+            microservice: "product"
+        - id: "category_add"
+          uri: "http://localhost:8088"
+          predicates:
+            - "Path=/api/v1/categories"
+            - "Method=POST"
+          metadata:
+            microservice: "category"
+        - id: "category_get_all"
+          uri: "http://localhost:8088"
+          predicates:
+            - "Path=/api/v1/categories"
+            - "Method=GET"
+          metadata:
+            microservice: "category"
