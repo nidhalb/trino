@@ -20,7 +20,13 @@ spring:
             - "Method=PUT"
           metadata:
             microservice: "product"
-        
+        - id: "product_get_all"
+          uri: "http://localhost:8089"
+          predicates:
+            - "Path=/api/v1/products"
+            - "Method=GET"
+          metadata:
+            microservice: "product"
         - id: "product_delete"
           uri: "http://localhost:8089"
           predicates:
