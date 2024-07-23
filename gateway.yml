@@ -6,13 +6,6 @@ spring:
         locator:
           enabled: true
       routes:
-      - id: "product_update"
-        uri: "http://localhost:8089"
-        predicates:
-        - "Path=/api/v1/products"
-        - "Method=PUT"
-        metadata:
-          microservice: "product"
       - id: "product_get_all"
         uri: "http://localhost:8089"
         predicates:
